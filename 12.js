@@ -23,7 +23,7 @@ function findBugInApples(arr) {
     // 이중 for문으로 배열의 배열을 조회
     for (let i = 0; i < arr.length; i++) {
         for (let j = 0; j < arr[i].length; j++) {
-            if (arr[i][j] === 'B') { // arr[i]번째 배열의 [j]번째 인자를 돌며 'B'를 탐색한다
+            if (arr[i][j] === 'B') { // arr[i]번째 배열의 [j]번째 인자를 돌며 'B'를 탐색
                 return [i, j]
             }
         }

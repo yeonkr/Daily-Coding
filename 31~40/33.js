@@ -60,3 +60,29 @@ function orderOfPresentation (N, K) {
   }
   return order;
 }
+
+// 다른 풀이
+
+function orderOfPresentation (N, K) {
+// 팩토리얼 -> 재귀 
+const factorial = function(n){
+  if (n <= 1){
+    return 1;
+  }
+  return n * factorial(n-1);
+}
+
+let cnt = 0;
+let used = [];
+for (let i = 0; i < N; i++){
+  let first = K[i] - 1;
+  for (const el of used){
+    if (el < K[i]){
+      first--;
+    }
+  }
+  cnt += first * factorial(N - 1 - i);
+  used.push(K[i]);
+}
+return cnt;
+}

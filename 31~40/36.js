@@ -44,4 +44,9 @@ if (arr.length <= 1) return arr;
   }
   // left, pivot, right 합쳐서 리턴 
   return quickSort(left).concat(pivot, quickSort(right));
+  // 또는 
+  // const lSorted = quickSort(left, transform);
+  // const rSorted = quickSort(right, transform);
+  // return [...lSorted, pivot, ...rSorted];
 };
+

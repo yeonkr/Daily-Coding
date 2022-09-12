@@ -11,7 +11,13 @@
 // [10]	      [-1]
 //-------------------//
 function solution(arr) {
-  if(arr.length <= 1) return [-1];
-  arr.sort((a,b) => b - a).pop();
+  if (arr.length <= 1) return [-1];
+  arr.sort((a, b) => b - a).pop();
   return arr;
+}
+
+//
+function solution(arr) {
+  arr.splice(arr.indexOf(Math.min(...arr)), 1);
+  return arr.length ? arr : [-1];
 }

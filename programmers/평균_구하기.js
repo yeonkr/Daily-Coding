@@ -13,8 +13,14 @@
 function solution(arr) {
   let sum = 0;
   let result = 0;
-  for(let i = 0; i<arr.length; i++){
-      sum += arr[i] 
-  } result = sum / arr.length; 
-  return result
+  for (let i = 0; i < arr.length; i++) {
+    sum += arr[i];
+  }
+  result = sum / arr.length;
+  return result;
+}
+
+// 다른 풀이
+function solution(arr) {
+  return arr.reduce((a, b) => a + b) / arr.length;
 }

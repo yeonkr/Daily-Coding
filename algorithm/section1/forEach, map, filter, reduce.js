@@ -25,3 +25,22 @@ a.forEach(
 // forEach는 배열의 요소를 하나하나 탐색하며,
 // predicate를 호출한다.
 // predicate는 배열의 요소를 첫번째로 넘기고, 인덱스는 두번째로 넘긴다.
+
+//--------------------------------------------------------------
+// map
+// 배열의 요소를 하나하나 탐색하며, 새로운 배열을 만들어 반환한다.
+// 즉, 배열의 요소를 변형할 때 사용한다.
+// map은 새로운 배열을 반환하며 원본배열과 길이가 같다.
+// forEach는 반환값이 없다.
+function map(predicate, thisArg) {
+  let list = [];
+  for (let i = 0; i < a.length; i++) {
+    list.push(predicate(a[i], i));
+  }
+  return list;
+}
+a = [10, 11, 12, 13, 14, 15];
+let result = a.map(function (v, i) {
+  return v * v; // 배열의 요소를 제곱한 새로운 배열을 반환한다.
+});
+console.log(result); // [ 100, 121, 144, 169, 196, 225 ] 제곱한 값이 들어있는 배열이 반환된다.

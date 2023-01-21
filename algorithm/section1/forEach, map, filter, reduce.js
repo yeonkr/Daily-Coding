@@ -115,3 +115,21 @@ let res = a.find(function (v, i) {
   return v === 13;
 });
 console.log(res); // 13
+
+//--------------------------------------------------------------
+// findIndex
+// 배열의 요소를 하나하나 탐색하며, 조건에 맞는 요소의 인덱스를 찾아 반환한다.
+// 즉, 배열의 요소의 인덱스를 찾을 때 사용한다.
+// findIndex는 찾은 요소의 인덱스를 반환하며 원본배열과 길이가 같다.
+// findIndex는 찾은 요소의 인덱스를 반환한다.
+// findIndex는 배열의 요소를 하나하나 탐색하며, 조건에 맞는 요소의 인덱스를 찾아 반환한다.
+function findIndex(predicate, thisArg) {
+  for (let i = 0; i < a.length; i++) {
+    if (predicate(a[i], i)) return i;
+  }
+}
+a = [10, 11, 12, 13, 14, 15];
+let ans = a.findIndex(function (v, i) {
+  return v === 13;
+});
+console.log(ans); // 3

@@ -133,3 +133,23 @@ let ans = a.findIndex(function (v, i) {
   return v === 13;
 });
 console.log(ans); // 3
+
+//--------------------------------------------------------------
+// some
+// 배열의 요소를 하나하나 탐색하며, 조건에 맞는 요소가 있는지 확인한다.
+// 즉, 배열의 요소가 조건에 맞는지 확인할 때 사용한다.
+// some은 조건에 맞는 요소가 있으면 true를 반환하며 원본배열과 길이가 같다.
+// some은 조건에 맞는 요소가 있으면 true를 반환한다.
+// some은 배열의 요소를 하나하나 탐색하며, 조건에 맞는 요소가 있는지 확인한다.
+function some(predicate, thisArg) {
+  for (let i = 0; i < a.length; i++) {
+    if (predicate(a[i], i)) return true;
+  }
+  return false;
+}
+
+a = [10, 11, 12, 13, 14, 15];
+let answer1 = a.some(function (v, i) {
+  return v === 13;
+});
+console.log(answer1); // true

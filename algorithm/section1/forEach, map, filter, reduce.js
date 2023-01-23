@@ -153,3 +153,21 @@ let answer1 = a.some(function (v, i) {
   return v === 13;
 });
 console.log(answer1); // true
+
+//--------------------------------------------------------------
+// every
+// 배열의 요소를 탐색하며 모든 요소가 조건에 맞는지 확인한다.
+// 즉, 배열의 모든 요소가 조건에 맞는지 확인할 때 사용한다.
+// every은 모든 요소가 조건에 맞으면 true를 반환하며 원본배열과 길이가 같다.
+function every(predicate, thisArg) {
+  for (let i = 0; i < a.length; i++) {
+    if (!predicate(a[i], i)) return false;
+  }
+  return true;
+}
+
+a = [10, 11, 12, 13, 14, 15];
+let answer2 = a.every(function (v, i) {
+  return v % 2 === 0;
+});
+console.log(answer2); // false

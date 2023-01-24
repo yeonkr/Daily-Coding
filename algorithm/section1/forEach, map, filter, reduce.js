@@ -171,3 +171,19 @@ let answer2 = a.every(function (v, i) {
   return v % 2 === 0;
 });
 console.log(answer2); // false
+
+//--------------------------------------------------------------
+// includes
+// 배열의 요소를 하나하나 탐색하며 요소가 있는지 확인한다.
+// 즉, 배열의 요소가 있는지 확인할 때 사용한다.
+// includes는 요소가 있으면 true를 반환하며 원본배열과 길이가 같다.
+function includes(val) {
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] === val) return true;
+  }
+  return false;
+}
+
+a = [10, 11, 12, 13, 14, 15];
+let answer3 = a.includes(13);
+console.log(answer3); // true

@@ -187,3 +187,19 @@ function includes(val) {
 a = [10, 11, 12, 13, 14, 15];
 let answer3 = a.includes(13);
 console.log(answer3); // true
+
+//--------------------------------------------------------------
+// indexOf
+// 배열의 요소를 하나하나 탐색하며 요소의 인덱스를 찾아 반환한다.
+// 즉, 배열의 요소의 인덱스를 찾을 때 사용한다.
+// indexOf는 요소의 인덱스를 반환하며 원본배열과 길이가 같다.
+function indexOf(val) {
+  for (let i = 0; i < a.length; i++) {
+    if (a[i] === val) return i;
+  }
+  return -1;
+}
+
+a = [10, 11, 12, 13, 14, 15];
+let answer4 = a.indexOf(13);
+console.log(answer4); // 3

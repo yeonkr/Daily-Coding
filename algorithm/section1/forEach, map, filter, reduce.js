@@ -203,3 +203,19 @@ function indexOf(val) {
 a = [10, 11, 12, 13, 14, 15];
 let answer4 = a.indexOf(13);
 console.log(answer4); // 3
+
+//--------------------------------------------------------------
+// lastIndexOf
+// 배열의 요소를 뒤에서부터 하나하나 탐색하며 요소의 인덱스를 찾아 반환한다.
+// 즉, 배열의 요소의 인덱스를 찾을 때 사용한다.
+// lastIndexOf는 요소의 인덱스를 반환하며 원본배열과 길이가 같다.
+function lastIndexOf(val) {
+  for (let i = a.length - 1; i >= 0; i--) {
+    if (a[i] === val) return i;
+  }
+  return -1;
+}
+
+a = [10, 11, 12, 13, 14, 15];
+let answer5 = a.lastIndexOf(13);
+console.log(answer5); // 3

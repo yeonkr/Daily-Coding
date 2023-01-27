@@ -219,3 +219,21 @@ function lastIndexOf(val) {
 a = [10, 11, 12, 13, 14, 15];
 let answer5 = a.lastIndexOf(13);
 console.log(answer5); // 3
+
+//--------------------------------------------------------------
+// fill
+// 배열의 요소를 하나하나 탐색하며 요소를 채운다.
+// 즉, 배열의 요소를 채울 때 사용한다.
+// fill은 채운 요소를 반환하며 원본배열과 길이가 같다.
+function fill(val, start, end) {
+  start = start || 0;
+  end = end || a.length;
+  for (let i = start; i < end; i++) {
+    a[i] = val;
+  }
+  return a;
+}
+
+a = [10, 11, 12, 13, 14, 15];
+let answer6 = a.fill(0);
+console.log(answer6); // [0, 0, 0, 0, 0, 0]

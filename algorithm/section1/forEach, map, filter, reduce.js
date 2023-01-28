@@ -237,3 +237,21 @@ function fill(val, start, end) {
 a = [10, 11, 12, 13, 14, 15];
 let answer6 = a.fill(0);
 console.log(answer6); // [0, 0, 0, 0, 0, 0]
+
+//--------------------------------------------------------------
+// copyWithin
+// 배열의 요소를 하나하나 탐색하며 요소를 복사한다.
+// 즉, 배열의 요소를 복사할 때 사용한다.
+// copyWithin은 복사한 요소를 반환하며 원본배열과 길이가 같다.
+function copyWithin(target, start, end) {
+  start = start || 0;
+  end = end || a.length;
+  for (let i = start; i < end; i++) {
+    a[target++] = a[i];
+  }
+  return a;
+}
+
+a = [10, 11, 12, 13, 14, 15];
+let answer7 = a.copyWithin(0, 3);
+console.log(answer7); // [13, 14, 15, 13, 14, 15]

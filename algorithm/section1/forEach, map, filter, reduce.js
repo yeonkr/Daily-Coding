@@ -255,3 +255,22 @@ function copyWithin(target, start, end) {
 a = [10, 11, 12, 13, 14, 15];
 let answer7 = a.copyWithin(0, 3);
 console.log(answer7); // [13, 14, 15, 13, 14, 15]
+
+//--------------------------------------------------------------
+// reverse
+// 배열의 요소를 하나하나 탐색하며 요소를 뒤집는다.
+// 즉, 배열의 요소를 뒤집을 때 사용한다.
+// reverse은 뒤집은 요소를 반환하며 원본배열과 길이가 같다.
+function reverse() {
+  let temp;
+  for (let i = 0; i < a.length / 2; i++) {
+    temp = a[i];
+    a[i] = a[a.length - 1 - i];
+    a[a.length - 1 - i] = temp;
+  }
+  return a;
+}
+
+a = [10, 11, 12, 13, 14, 15];
+let answer8 = a.reverse();
+console.log(answer8); // [15, 14, 13, 12, 11, 10]

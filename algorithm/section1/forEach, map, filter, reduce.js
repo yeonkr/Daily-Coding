@@ -274,3 +274,26 @@ function reverse() {
 a = [10, 11, 12, 13, 14, 15];
 let answer8 = a.reverse();
 console.log(answer8); // [15, 14, 13, 12, 11, 10]
+
+//--------------------------------------------------------------
+// sort
+// 배열의 요소를 하나하나 탐색하며 요소를 정렬한다.
+// 즉, 배열의 요소를 정렬할 때 사용한다.
+// sort은 정렬한 요소를 반환하며 원본배열과 길이가 같다.
+function sort(compare) {
+  compare = compare || ((a, b) => a - b);
+  for (let i = 0; i < a.length - 1; i++) {
+    for (let j = i + 1; j < a.length; j++) {
+      if (compare(a[i], a[j]) > 0) {
+        let temp = a[i];
+        a[i] = a[j];
+        a[j] = temp;
+      }
+    }
+  }
+  return a;
+}
+
+a = [10, 11, 12, 13, 14, 15];
+let answer9 = a.sort((a, b) => b - a);
+console.log(answer9); // [15, 14, 13, 12, 11, 10]

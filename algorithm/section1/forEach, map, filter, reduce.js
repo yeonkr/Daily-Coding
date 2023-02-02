@@ -297,3 +297,29 @@ function sort(compare) {
 a = [10, 11, 12, 13, 14, 15];
 let answer9 = a.sort((a, b) => b - a);
 console.log(answer9); // [15, 14, 13, 12, 11, 10]
+
+//--------------------------------------------------------------
+// concat
+// 배열의 요소를 하나하나 탐색하며 요소를 연결한다.
+// 즉, 배열의 요소를 연결할 때 사용한다.
+// concat은 연결한 요소를 반환하며 원본배열과 길이가 다르다.
+function concat(...args) {
+  let result = [];
+  for (let i = 0; i < a.length; i++) {
+    result.push(a[i]);
+  }
+  for (let i = 0; i < args.length; i++) {
+    if (Array.isArray(args[i])) {
+      for (let j = 0; j < args[i].length; j++) {
+        result.push(args[i][j]);
+      }
+    } else {
+      result.push(args[i]);
+    }
+  }
+  return result;
+}
+
+a = [10, 11, 12, 13, 14, 15];
+let answer10 = a.concat(16, 17, [18, 19]);
+console.log(answer10); // [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]

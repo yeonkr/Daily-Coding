@@ -323,3 +323,22 @@ function concat(...args) {
 a = [10, 11, 12, 13, 14, 15];
 let answer10 = a.concat(16, 17, [18, 19]);
 console.log(answer10); // [10, 11, 12, 13, 14, 15, 16, 17, 18, 19]
+
+//--------------------------------------------------------------
+// slice
+// 배열의 요소를 하나하나 탐색하며 요소를 잘라낸다.
+// 즉, 배열의 요소를 잘라낼 때 사용한다.
+// slice은 잘라낸 요소를 반환하며 원본배열과 길이가 다르다.
+function slice(start, end) {
+  start = start || 0;
+  end = end || a.length;
+  let result = [];
+  for (let i = start; i < end; i++) {
+    result.push(a[i]);
+  }
+  return result;
+}
+
+a = [10, 11, 12, 13, 14, 15];
+let answer11 = a.slice(3, 5);
+console.log(answer11); // [13, 14]

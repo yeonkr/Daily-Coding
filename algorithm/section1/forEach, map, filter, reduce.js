@@ -342,3 +342,28 @@ function slice(start, end) {
 a = [10, 11, 12, 13, 14, 15];
 let answer11 = a.slice(3, 5);
 console.log(answer11); // [13, 14]
+
+//--------------------------------------------------------------
+// splice
+// 배열의 요소를 하나하나 탐색하며 요소를 삭제하거나 추가한다.
+// 즉, 배열의 요소를 삭제하거나 추가할 때 사용한다.
+// splice은 삭제하거나 추가한 요소를 반환하며 원본배열과 길이가 다르다.
+function splice(start, deleteCount, ...args) {
+  start = start || 0;
+  deleteCount = deleteCount || a.length;
+  let result = [];
+  for (let i = 0; i < start; i++) {
+    result.push(a[i]);
+  }
+  for (let i = 0; i < args.length; i++) {
+    result.push(args[i]);
+  }
+  for (let i = start + deleteCount; i < a.length; i++) {
+    result.push(a[i]);
+  }
+  return result;
+}
+
+a = [10, 11, 12, 13, 14, 15];
+let answer12 = a.splice(3, 2, 16, 17);
+console.log(answer12); // [13, 14]

@@ -367,3 +367,22 @@ function splice(start, deleteCount, ...args) {
 a = [10, 11, 12, 13, 14, 15];
 let answer12 = a.splice(3, 2, 16, 17);
 console.log(answer12); // [13, 14]
+
+//--------------------------------------------------------------
+// indexOf
+// 배열의 요소를 하나하나 탐색하며 요소를 찾는다.
+// 즉, 배열의 요소를 찾을 때 사용한다.
+// indexOf는 찾은 요소의 인덱스를 반환하며 원본배열과 길이가 같다.
+function indexOf(searchElement, fromIndex) {
+  fromIndex = fromIndex || 0;
+  for (let i = fromIndex; i < a.length; i++) {
+    if (a[i] === searchElement) {
+      return i;
+    }
+  }
+  return -1;
+}
+
+a = [10, 11, 12, 13, 14, 15];
+let answer13 = a.indexOf(13);
+console.log(answer13); // 3

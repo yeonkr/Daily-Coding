@@ -386,3 +386,20 @@ function indexOf(searchElement, fromIndex) {
 a = [10, 11, 12, 13, 14, 15];
 let answer13 = a.indexOf(13);
 console.log(answer13); // 3
+
+//--------------------------------------------------------------
+// toString
+// 배열의 요소를 하나하나 탐색하며 요소를 문자열로 변환한다.
+// 즉, 배열의 요소를 문자열로 변환할 때 사용한다.
+// toString은 변환한 요소를 반환하며 원본배열과 길이가 같다.
+function toString() {
+  let result = "";
+  for (let i = 0; i < a.length; i++) {
+    result += a[i] + ",";
+  }
+  return result;
+}
+
+a = [10, 11, 12, 13, 14, 15];
+let answer14 = a.toString();
+console.log(answer14); // 10,11,12,13,14,15

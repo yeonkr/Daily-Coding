@@ -403,3 +403,21 @@ function toString() {
 a = [10, 11, 12, 13, 14, 15];
 let answer14 = a.toString();
 console.log(answer14); // 10,11,12,13,14,15
+
+//--------------------------------------------------------------
+// join
+// 배열의 요소를 하나하나 탐색하며 요소를 문자열로 변환한다.
+// 즉, 배열의 요소를 문자열로 변환할 때 사용한다.
+// join은 변환한 요소를 반환하며 원본배열과 길이가 같다.
+function join(separator) {
+  separator = separator || ",";
+  let result = "";
+  for (let i = 0; i < a.length; i++) {
+    result += a[i] + separator;
+  }
+  return result;
+}
+
+a = [10, 11, 12, 13, 14, 15];
+let answer15 = a.join("-");
+console.log(answer15); // 10-11-12-13-14-15

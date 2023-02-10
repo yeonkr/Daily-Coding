@@ -421,3 +421,20 @@ function join(separator) {
 a = [10, 11, 12, 13, 14, 15];
 let answer15 = a.join("-");
 console.log(answer15); // 10-11-12-13-14-15
+
+//--------------------------------------------------------------
+// reduceRight
+// 배열의 요소를 하나하나 탐색하며 요소를 축약한다.
+// 즉, 배열의 요소를 축약할 때 사용한다.
+// reduceRight은 축약한 요소를 반환하며 원본배열과 길이가 같다.
+function reduceRight(callback, initialValue) {
+  let result = initialValue;
+  for (let i = a.length - 1; i >= 0; i--) {
+    result = callback(result, a[i], i, a);
+  }
+  return result;
+}
+
+a = [10, 11, 12, 13, 14, 15];
+let answer17 = a.reduceRight((prev, curr, idx, arr) => prev + curr, 0);
+console.log(answer17); // 75

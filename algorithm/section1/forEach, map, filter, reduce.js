@@ -438,3 +438,16 @@ function reduceRight(callback, initialValue) {
 a = [10, 11, 12, 13, 14, 15];
 let answer17 = a.reduceRight((prev, curr, idx, arr) => prev + curr, 0);
 console.log(answer17); // 75
+
+//--------------------------------------------------------------
+// get
+// 배열의 요소를 하나하나 탐색하며 요소를 반환한다.
+// 즉, 배열의 요소를 반환할 때 사용한다.
+// get은 반환한 요소를 반환하며 원본배열과 길이가 같다.
+function get(index) {
+  return a[index];
+}
+
+a = [10, 11, 12, 13, 14, 15];
+let answer18 = a.get(3);
+console.log(answer18); // 13

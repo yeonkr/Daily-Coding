@@ -451,3 +451,17 @@ function get(index) {
 a = [10, 11, 12, 13, 14, 15];
 let answer18 = a.get(3);
 console.log(answer18); // 13
+
+//--------------------------------------------------------------
+// set
+// 배열의 요소를 하나하나 탐색하며 요소를 변경한다.
+// 즉, 배열의 요소를 변경할 때 사용한다.
+// set은 변경한 요소를 반환하며 원본배열과 길이가 같다.
+function set(index, value) {
+  a[index] = value;
+  return a[index];
+}
+
+a = [10, 11, 12, 13, 14, 15];
+let answer19 = a.set(3, 16);
+console.log(answer19); // 16

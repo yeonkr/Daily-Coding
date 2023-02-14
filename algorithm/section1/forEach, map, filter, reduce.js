@@ -449,8 +449,8 @@ function get(index) {
 }
 
 a = [10, 11, 12, 13, 14, 15];
-let answer18 = a.get(3);
-console.log(answer18); // 13
+// let answer18 = a.get(3);
+// console.log(answer18); // 13
 
 //--------------------------------------------------------------
 // set
@@ -463,5 +463,17 @@ function set(index, value) {
 }
 
 a = [10, 11, 12, 13, 14, 15];
-let answer19 = a.set(3, 16);
-console.log(answer19); // 16
+// let answer19 = a.set(3, 16);
+// console.log(answer19); // 16
+
+//--------------------------------------------------------------
+// of
+// 배열의 요소를 하나하나 탐색하며 요소를 반환한다.
+// 즉, 배열의 요소를 반환할 때 사용한다.
+// of은 반환한 요소를 반환하며 원본배열과 길이가 같다.
+function of(...args) {
+  return args;
+}
+
+let answer20 = Array.of(10, 11, 12, 13, 14, 15);
+console.log(answer20); // [10, 11, 12, 13, 14, 15]

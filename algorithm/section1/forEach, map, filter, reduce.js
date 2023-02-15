@@ -477,3 +477,19 @@ function of(...args) {
 
 let answer20 = Array.of(10, 11, 12, 13, 14, 15);
 console.log(answer20); // [10, 11, 12, 13, 14, 15]
+
+//--------------------------------------------------------------
+// from
+// 배열의 요소를 하나하나 탐색하며 요소를 반환한다.
+// 즉, 배열의 요소를 반환할 때 사용한다.
+// from은 반환한 요소를 반환하며 원본배열과 길이가 같다.
+function from(arrayLike, mapFn, thisArg) {
+  let result = [];
+  for (let i = 0; i < arrayLike.length; i++) {
+    result.push(arrayLike[i]);
+  }
+  return result;
+}
+
+let answer21 = Array.from([10, 11, 12, 13, 14, 15]);
+console.log(answer21); // [10, 11, 12, 13, 14, 15]

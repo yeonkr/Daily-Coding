@@ -493,3 +493,16 @@ function from(arrayLike, mapFn, thisArg) {
 
 let answer21 = Array.from([10, 11, 12, 13, 14, 15]);
 console.log(answer21); // [10, 11, 12, 13, 14, 15]
+
+//--------------------------------------------------------------
+// has
+// 배열의 요소를 하나하나 탐색하며 요소를 반환한다.
+// 즉, 배열의 요소를 반환할 때 사용한다.
+// has은 반환한 요소를 반환하며 원본배열과 길이가 같다.
+function has(index) {
+  return a[index] !== undefined;
+}
+
+a = [10, 11, 12, 13, 14, 15];
+let answer22 = a.has(3); // 3번째 요소가 존재한다.
+console.log(answer22); // true

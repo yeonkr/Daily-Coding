@@ -504,5 +504,21 @@ function has(index) {
 }
 
 a = [10, 11, 12, 13, 14, 15];
-let answer22 = a.has(3); // 3번째 요소가 존재한다.
-console.log(answer22); // true
+// let answer22 = a.has(3); // 3번째 요소가 존재한다.
+// console.log(answer22); // true
+
+//--------------------------------------------------------------
+// push
+// 배열의 요소를 하나하나 탐색하며 요소를 추가한다.
+// 즉, 배열의 요소를 추가할 때 사용한다.
+// push은 추가한 요소를 반환하며 원본배열과 길이가 같다.
+function push(...args) {
+  for (let i = 0; i < args.length; i++) {
+    a[a.length] = args[i];
+  }
+  return a.length;
+}
+
+a = [10, 11, 12, 13, 14, 15];
+let answer23 = a.push(16, 17, 18);
+console.log(answer23); // 9

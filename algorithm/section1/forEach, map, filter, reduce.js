@@ -522,3 +522,18 @@ function push(...args) {
 a = [10, 11, 12, 13, 14, 15];
 let answer23 = a.push(16, 17, 18);
 console.log(answer23); // 9
+
+//--------------------------------------------------------------
+// pop
+// 배열의 요소를 하나하나 탐색하며 요소를 제거한다.
+// 즉, 배열의 요소를 제거할 때 사용한다.
+// pop은 제거한 요소를 반환하며 원본배열과 길이가 같다.
+function pop() {
+  let result = a[a.length - 1];
+  a.length = a.length - 1;
+  return result;
+}
+
+a = [10, 11, 12, 13, 14, 15];
+let answer24 = a.pop();
+console.log(answer24); // 15

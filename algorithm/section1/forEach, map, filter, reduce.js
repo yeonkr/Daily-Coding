@@ -537,3 +537,22 @@ function pop() {
 a = [10, 11, 12, 13, 14, 15];
 let answer24 = a.pop();
 console.log(answer24); // 15
+
+//--------------------------------------------------------------
+// unshift
+// 배열의 요소를 하나하나 탐색하며 요소를 추가한다.
+// 즉, 배열의 요소를 추가할 때 사용한다.
+// unshift은 추가한 요소를 반환하며 원본배열과 길이가 같다.
+function unshift(...args) {
+  for (let i = a.length - 1; i >= 0; i--) {
+    a[i + args.length] = a[i];
+  }
+  for (let i = 0; i < args.length; i++) {
+    a[i] = args[i];
+  }
+  return a.length;
+}
+
+a = [10, 11, 12, 13, 14, 15];
+let answer25 = a.unshift(9, 8, 7);
+console.log(answer25); // 9

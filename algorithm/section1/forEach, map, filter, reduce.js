@@ -556,3 +556,21 @@ function unshift(...args) {
 a = [10, 11, 12, 13, 14, 15];
 let answer25 = a.unshift(9, 8, 7);
 console.log(answer25); // 9
+
+//--------------------------------------------------------------
+// shift
+// 배열의 요소를 하나하나 탐색하며 요소를 제거한다.
+// 즉, 배열의 요소를 제거할 때 사용한다.
+// shift은 제거한 요소를 반환하며 원본배열과 길이가 같다.
+function shift() {
+  let result = a[0];
+  for (let i = 0; i < a.length - 1; i++) {
+    a[i] = a[i + 1];
+  }
+  a.length = a.length - 1;
+  return result;
+}
+
+a = [10, 11, 12, 13, 14, 15];
+let answer26 = a.shift();
+console.log(answer26); // 10

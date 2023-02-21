@@ -574,3 +574,19 @@ function shift() {
 a = [10, 11, 12, 13, 14, 15];
 let answer26 = a.shift();
 console.log(answer26); // 10
+
+//--------------------------------------------------------------
+// keys
+// 배열의 요소를 하나하나 탐색하며 요소의 인덱스를 반환한다.
+// 즉, 배열의 요소의 인덱스를 반환할 때 사용한다.
+
+function keys() {
+  let result = [];
+  for (let i = 0; i < a.length; i++) {
+    result.push(i);
+  }
+  return result;
+}
+
+a = [10, 11, 12, 13, 14, 15];
+console.log(Object.keys(a)); // ['0', '1', '2', '3', '4', '5']

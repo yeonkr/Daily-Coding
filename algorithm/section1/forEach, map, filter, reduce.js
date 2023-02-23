@@ -590,3 +590,20 @@ function keys() {
 
 a = [10, 11, 12, 13, 14, 15];
 console.log(Object.keys(a)); // ['0', '1', '2', '3', '4', '5']
+
+//--------------------------------------------------------------
+// assign
+// 배열의 요소를 하나하나 탐색하며 요소를 추가한다.
+// 즉, 배열의 요소를 추가할 때 사용한다.
+// assign은 추가한 요소를 반환하며 원본배열과 길이가 같다.
+function assign(target, ...args) {
+  for (let i = 0; i < args.length; i++) {
+    for (let key in args[i]) {
+      target[key] = args[i][key];
+    }
+  }
+  return target;
+}
+
+let answer27 = Object.assign({ a: 1 }, { b: 2 }, { c: 3 });
+console.log(answer27); // { a: 1, b: 2, c: 3 }

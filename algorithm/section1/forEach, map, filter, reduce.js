@@ -607,3 +607,16 @@ function assign(target, ...args) {
 
 let answer27 = Object.assign({ a: 1 }, { b: 2 }, { c: 3 });
 console.log(answer27); // { a: 1, b: 2, c: 3 }
+
+//--------------------------------------------------------------
+// setPrototypeOf
+// 주어진 객체의 프로토타입을 변경 또는 null로 설정한다.
+// obj : 프로토타입을 변경할 객체
+// prototype : 새로운 프로토타입 값 또는 null
+function setPrototypeOf(obj, prototype) {
+  obj.__proto__ = prototype;
+  return obj;
+}
+
+let answer28 = Object.setPrototypeOf({ a: 1 }, { b: 2 });
+console.log(answer28); // { a: 1 }

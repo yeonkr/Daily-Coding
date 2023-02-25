@@ -620,3 +620,14 @@ function setPrototypeOf(obj, prototype) {
 
 let answer28 = Object.setPrototypeOf({ a: 1 }, { b: 2 });
 console.log(answer28); // { a: 1 }
+
+//--------------------------------------------------------------
+// getPrototypeOf
+// 주어진 객체의 프로토타입을 반환한다.
+// obj : 프로토타입을 반환할 객체
+function getPrototypeOf(obj) {
+  return obj.__proto__;
+}
+
+let answer29 = Object.getPrototypeOf({ a: 1 });
+console.log(answer29); // {}

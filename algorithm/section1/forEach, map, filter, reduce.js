@@ -631,3 +631,15 @@ function getPrototypeOf(obj) {
 
 let answer29 = Object.getPrototypeOf({ a: 1 });
 console.log(answer29); // {}
+
+//--------------------------------------------------------------
+// is
+// 두 개의 값이 같은지 비교한다.
+// value1 : 비교할 첫 번째 값
+// value2 : 비교할 두 번째 값
+function is(value1, value2) {
+  return value1 === value2;
+}
+
+let answer30 = Object.is(1, 1);
+console.log(answer30); // true

@@ -643,3 +643,14 @@ function is(value1, value2) {
 
 let answer30 = Object.is(1, 1);
 console.log(answer30); // true
+
+//--------------------------------------------------------------
+// isExtensible
+// 객체의 확장 가능 여부를 반환한다.
+// obj : 확장 가능 여부를 확인할 객체
+function isExtensible(obj) {
+  return obj.isExtensible;
+}
+
+let answer31 = Object.isExtensible({ a: 1 });
+console.log(answer31); // true

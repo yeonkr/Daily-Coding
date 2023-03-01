@@ -654,3 +654,28 @@ function isExtensible(obj) {
 
 let answer31 = Object.isExtensible({ a: 1 });
 console.log(answer31); // true
+
+//--------------------------------------------------------------
+// isSealed
+// 객체의 밀봉 여부를 반환한다. 객체의 쓰기 가능한 프로퍼티를 제외하고 변경 금지된 상태인지를 확인한다.
+// obj : 밀봉 여부를 확인할 객체
+// 쓰기 가능한 프로퍼티를 제외하고 변경 금지된 상태인 경우에는 true, 그렇지 않은 경우에는 false를 반환
+function isSealed(obj) {
+  return obj.isSealed;
+}
+
+let answer32 = Object.isSealed({ a: 1 });
+console.log(answer32); // false
+
+var obj = {
+  prop: "Hello",
+};
+
+// 변경이 불가능한지 테스트
+console.log(Object.isSealed(obj)); // false
+
+// 변경을 하지 못하도록 처리
+Object.seal(obj); // seal은 객체를 변경할 수 없게 만든다.
+
+// 변경이 불가능한지 테스트
+console.log(Object.isSealed(obj)); // true

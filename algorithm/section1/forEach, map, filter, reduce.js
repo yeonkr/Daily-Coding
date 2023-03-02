@@ -679,3 +679,18 @@ Object.seal(obj); // seal은 객체를 변경할 수 없게 만든다.
 
 // 변경이 불가능한지 테스트
 console.log(Object.isSealed(obj)); // true
+
+//--------------------------------------------------------------
+// entries
+// 객체의 프로퍼티를 하나하나 탐색하며 프로퍼티의 키와 값을 반환한다.
+// 즉, 객체의 프로퍼티의 키와 값을 반환할 때 사용한다.
+function entries(obj) {
+  let result = [];
+  for (let key in obj) {
+    result.push([key, obj[key]]);
+  }
+  return result;
+}
+
+let answer33 = Object.entries({ a: 1, b: 2, c: 3 });
+console.log(answer33); // [ [ 'a', 1 ], [ 'b', 2 ], [ 'c', 3 ] ]

@@ -694,3 +694,17 @@ function entries(obj) {
 
 let answer33 = Object.entries({ a: 1, b: 2, c: 3 });
 console.log(answer33); // [ [ 'a', 1 ], [ 'b', 2 ], [ 'c', 3 ] ]
+
+//--------------------------------------------------------------
+// create
+// 주어진 프로토타입과 속성을 가진 새로운 객체를 생성한다.
+// proto : 새로 생성할 객체의 프로토타입
+// propertiesObject : 새로 생성할 객체의 속성을 나타내는 객체
+function create(proto, propertiesObject) {
+  let obj = {};
+  obj.__proto__ = proto;
+  return obj;
+}
+
+let answer34 = Object.create({ a: 1 }, { b: 2 });
+console.log(answer34); // {}

@@ -708,3 +708,12 @@ function create(proto, propertiesObject) {
 
 let answer34 = Object.create({ a: 1 }, { b: 2 });
 console.log(answer34); // {}
+
+//--------------------------------------------------------------
+// freeze
+// 객체를 변경할 수 없게 만든다.
+// obj : 변경할 수 없게 만들 객체
+function freeze(obj) {
+  obj.isExtensible = false;
+  return obj;
+}

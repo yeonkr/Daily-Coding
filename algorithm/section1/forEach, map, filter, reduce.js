@@ -717,3 +717,12 @@ function freeze(obj) {
   obj.isExtensible = false;
   return obj;
 }
+
+//--------------------------------------------------------------
+// seal
+// 객체의 쓰기 가능한 프로퍼티를 제외하고 변경 금지한다.
+// obj : 변경 금지할 객체
+function seal(obj) {
+  obj.isSealed = true;
+  return obj;
+}

@@ -726,3 +726,14 @@ function seal(obj) {
   obj.isSealed = true;
   return obj;
 }
+
+//--------------------------------------------------------------
+// bind
+// 함수의 this를 바인딩한다.
+// thisArg : this로 사용할 객체
+// args : 함수에 전달할 인수
+function bind(func, thisArg, ...args) {
+  return function () {
+    return func.apply(thisArg, args);
+  };
+}

@@ -737,3 +737,12 @@ function bind(func, thisArg, ...args) {
     return func.apply(thisArg, args);
   };
 }
+
+//--------------------------------------------------------------
+// call
+// 함수를 호출하며 this를 바인딩한다.
+// thisArg : this로 사용할 객체
+// args : 함수에 전달할 인수
+function call(func, thisArg, ...args) {
+  return func.apply(thisArg, args);
+}

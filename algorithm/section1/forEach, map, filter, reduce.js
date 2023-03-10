@@ -746,3 +746,14 @@ function bind(func, thisArg, ...args) {
 function call(func, thisArg, ...args) {
   return func.apply(thisArg, args);
 }
+
+//--------------------------------------------------------------
+// apply
+// 함수를 호출하며 this를 바인딩한다.
+// thisArg : this로 사용할 객체
+// args : 함수에 전달할 인수 배열
+function apply(func, thisArg, args) {
+  return func.apply(thisArg, args);
+}
+// call과 apply의 차이
+// call 메소드와 동일 하나, call 메소드는 인자 하나 하나를, apply는 인자 리스트를 전달.

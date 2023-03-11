@@ -757,3 +757,17 @@ function apply(func, thisArg, args) {
 }
 // call과 apply의 차이
 // call 메소드와 동일 하나, call 메소드는 인자 하나 하나를, apply는 인자 리스트를 전달.
+
+//--------------------------------------------------------------
+// once
+// 함수를 한 번만 실행할 수 있도록 한다.
+// func : 한 번만 실행할 함수
+function once(func) {
+  let isCalled = false;
+  return function () {
+    if (!isCalled) {
+      isCalled = true;
+      return func.apply(this, arguments);
+    }
+  };
+}

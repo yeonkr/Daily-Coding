@@ -771,3 +771,21 @@ function once(func) {
     }
   };
 }
+
+//--------------------------------------------------------------
+// memoize
+// 함수의 결과를 캐싱하여 같은 인수로 함수를 호출할 경우 캐싱된 결과를 반환한다.
+// func : 캐싱할 함수
+function memoize(func) {
+  let cache = {};
+  return function () {
+    let key = JSON.stringify(arguments);
+    if (cache[key]) {
+      return cache[key];
+    } else {
+      let result = func.apply(this, arguments);
+      cache[key] = result;
+      return result;
+    }
+  };
+}

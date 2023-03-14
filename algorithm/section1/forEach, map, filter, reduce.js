@@ -789,3 +789,16 @@ function memoize(func) {
     }
   };
 }
+
+//--------------------------------------------------------------
+// after
+// 함수를 호출한 횟수가 주어진 횟수 이상이 되면 주어진 함수를 실행한다.
+// times : 함수를 실행할 횟수
+// func : 실행할 함수
+function after(times, func) {
+  return function () {
+    if (--times < 1) {
+      return func.apply(this, arguments);
+    }
+  };
+}

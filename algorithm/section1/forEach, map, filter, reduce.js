@@ -802,3 +802,16 @@ function after(times, func) {
     }
   };
 }
+
+//--------------------------------------------------------------
+// before
+// 함수를 호출한 횟수가 주어진 횟수 이하가 되면 주어진 함수를 실행한다.
+// times : 함수를 실행할 횟수
+// func : 실행할 함수
+function before(times, func) {
+  return function () {
+    if (--times >= 0) {
+      return func.apply(this, arguments);
+    }
+  };
+}

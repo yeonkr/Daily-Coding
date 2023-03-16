@@ -815,3 +815,14 @@ function before(times, func) {
     }
   };
 }
+
+//--------------------------------------------------------------
+// ary
+// 함수의 인수를 제한한다.
+// func : 인수를 제한할 함수
+// n : 제한할 인수의 개수
+function ary(func, n) {
+  return function () {
+    return func.apply(this, Array.from(arguments).slice(0, n));
+  };
+}

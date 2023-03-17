@@ -826,3 +826,13 @@ function ary(func, n) {
     return func.apply(this, Array.from(arguments).slice(0, n));
   };
 }
+
+//--------------------------------------------------------------
+// unary
+// 함수의 인수를 하나만 받을 수 있도록 한다.
+// func : 인수를 하나만 받을 수 있도록 할 함수
+function unary(func) {
+  return function (arg) {
+    return func(arg);
+  };
+}

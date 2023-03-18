@@ -836,3 +836,13 @@ function unary(func) {
     return func(arg);
   };
 }
+
+//--------------------------------------------------------------
+// negate
+// 함수의 반환값을 반대로 바꾼다.
+// func : 반환값을 반대로 바꿀 함수
+function negate(func) {
+  return function () {
+    return !func.apply(this, arguments);
+  };
+}

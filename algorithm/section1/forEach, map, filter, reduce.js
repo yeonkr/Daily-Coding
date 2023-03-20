@@ -846,3 +846,13 @@ function negate(func) {
     return !func.apply(this, arguments);
   };
 }
+
+//--------------------------------------------------------------
+// spread
+// 배열을 함수의 인수로 사용할 수 있게 한다.
+// func : 배열을 인수로 사용할 수 있게 할 함수
+function spread(func) {
+  return function (args) {
+    return func.apply(this, args);
+  };
+}

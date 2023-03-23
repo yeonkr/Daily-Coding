@@ -856,3 +856,15 @@ function spread(func) {
     return func.apply(this, args);
   };
 }
+
+//--------------------------------------------------------------
+// rest
+// 함수의 인수를 배열로 받을 수 있게 한다.
+// func : 배열을 인수로 받을 수 있게 할 함수
+// start : 배열로 받을 인수의 시작 인덱스
+function rest(func, start) {
+  return function () {
+    let args = Array.from(arguments);
+    return func.apply(this, args.slice(start));
+  };
+}

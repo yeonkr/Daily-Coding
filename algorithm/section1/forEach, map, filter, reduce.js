@@ -883,3 +883,20 @@ function debounce(func, wait) {
     }, wait);
   };
 }
+
+//--------------------------------------------------------------
+// throttle
+// 함수를 호출한 후 일정 시간이 지나기 전에 다시 호출되면 이전 호출은 무시한다.
+// func : 호출을 제한할 함수
+// wait : 호출을 제한할 시간
+function throttle(func, wait) {
+  let timeoutId;
+  return function () {
+    if (!timeoutId) {
+      timeoutId = setTimeout(() => {
+        timeoutId = null;
+        func.apply(this, arguments);
+      }, wait);
+    }
+  };
+}

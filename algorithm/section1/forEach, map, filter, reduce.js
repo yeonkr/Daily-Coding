@@ -868,3 +868,18 @@ function rest(func, start) {
     return func.apply(this, args.slice(start));
   };
 }
+
+//--------------------------------------------------------------
+// debounce
+// 함수를 호출한 후 일정 시간이 지나기 전에 다시 호출되면 이전 호출은 무시한다.
+// func : 호출을 제한할 함수
+// wait : 호출을 제한할 시간
+function debounce(func, wait) {
+  let timeoutId;
+  return function () {
+    clearTimeout(timeoutId);
+    timeoutId = setTimeout(() => {
+      func.apply(this, arguments);
+    }, wait);
+  };
+}

@@ -900,3 +900,13 @@ function throttle(func, wait) {
     }
   };
 }
+
+//--------------------------------------------------------------
+// compose
+// 함수를 오른쪽에서 왼쪽으로 실행한다.
+// funcs : 실행할 함수들
+function compose(...funcs) {
+  return function (args) {
+    return funcs.reduceRight((arg, func) => func(arg), args);
+  };
+}

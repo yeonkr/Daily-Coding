@@ -910,3 +910,13 @@ function compose(...funcs) {
     return funcs.reduceRight((arg, func) => func(arg), args);
   };
 }
+
+//--------------------------------------------------------------
+// pipe
+// 함수를 왼쪽에서 오른쪽으로 실행한다.
+// funcs : 실행할 함수들
+function pipe(...funcs) {
+  return function (args) {
+    return funcs.reduce((arg, func) => func(arg), args);
+  };
+}

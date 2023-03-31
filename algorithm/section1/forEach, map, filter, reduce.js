@@ -920,3 +920,15 @@ function pipe(...funcs) {
     return funcs.reduce((arg, func) => func(arg), args);
   };
 }
+
+//--------------------------------------------------------------
+// curry
+// 함수를 커링한다.
+// func : 커링할 함수
+function curry(func) {
+  return function (a) {
+    return function (b) {
+      return func(a, b);
+    };
+  };
+}

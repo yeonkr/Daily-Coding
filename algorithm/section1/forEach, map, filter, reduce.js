@@ -932,3 +932,14 @@ function curry(func) {
     };
   };
 }
+
+//--------------------------------------------------------------
+// partial
+// 함수의 일부 인수를 미리 지정한다.
+// func : 인수를 미리 지정할 함수
+// ...args : 미리 지정할 인수
+function partial(func, ...args) {
+  return function () {
+    return func.apply(this, [...args, ...arguments]);
+  };
+}

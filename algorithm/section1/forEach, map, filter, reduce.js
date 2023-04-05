@@ -954,3 +954,13 @@ function partialRight(func, ...args) {
     return func.apply(this, [...arguments, ...args]);
   };
 }
+
+//--------------------------------------------------------------
+// flip
+// 함수의 인수를 뒤집는다.
+// func : 인수를 뒤집을 함수
+function flip(func) {
+  return function (a, b) {
+    return func(b, a);
+  };
+}

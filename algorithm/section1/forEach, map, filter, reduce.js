@@ -964,3 +964,13 @@ function flip(func) {
     return func(b, a);
   };
 }
+
+//--------------------------------------------------------------
+// over
+// 함수들을 실행하고 그 결과를 배열로 반환한다.
+// funcs : 실행할 함수들
+function over(...funcs) {
+  return function (args) {
+    return funcs.map((func) => func(args));
+  };
+}

@@ -974,3 +974,14 @@ function over(...funcs) {
     return funcs.map((func) => func(args));
   };
 }
+
+//--------------------------------------------------------------
+// overArgs
+// 함수의 인수를 다른 함수로 변환한다.
+// func : 인수를 변환할 함수
+// ...transforms : 인수를 변환할 함수들
+function overArgs(func, ...transforms) {
+  return function (...args) {
+    return func(...args.map((arg, index) => transforms[index](arg)));
+  };
+}

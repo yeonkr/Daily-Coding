@@ -985,3 +985,13 @@ function overArgs(func, ...transforms) {
     return func(...args.map((arg, index) => transforms[index](arg)));
   };
 }
+
+//--------------------------------------------------------------
+// constant
+// 항상 같은 값을 반환하는 함수를 생성한다.
+// value : 반환할 값
+function constant(value) {
+  return function () {
+    return value;
+  };
+}

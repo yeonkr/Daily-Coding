@@ -706,8 +706,8 @@ function create(proto, propertiesObject) {
   return obj;
 }
 
-let answer34 = Object.create({ a: 1 }, { b: 2 });
-console.log(answer34); // {}
+// let answer34 = Object.create({ a: 1 }, { b: 2 });
+// console.log(answer34); // {}
 
 //--------------------------------------------------------------
 // freeze
@@ -995,3 +995,12 @@ function constant(value) {
     return value;
   };
 }
+
+//--------------------------------------------------------------
+// identity
+// 인수를 그대로 반환하는 함수를 생성한다.
+// 단독 사용에 의미가 없다. 여러 함수들과 합쳐져 의미를 만든다.
+function identity() {
+  return arguments[0];
+}
+console.log(identity(1, 2, 3, 4, 5)); // 1

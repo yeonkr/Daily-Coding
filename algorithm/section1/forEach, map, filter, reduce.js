@@ -576,22 +576,6 @@ let answer26 = a.shift();
 console.log(answer26); // 10
 
 //--------------------------------------------------------------
-// keys
-// 배열의 요소를 하나하나 탐색하며 요소의 인덱스를 반환한다.
-// 즉, 배열의 요소의 인덱스를 반환할 때 사용한다.
-
-function keys() {
-  let result = [];
-  for (let i = 0; i < a.length; i++) {
-    result.push(i);
-  }
-  return result;
-}
-
-a = [10, 11, 12, 13, 14, 15];
-console.log(Object.keys(a)); // ['0', '1', '2', '3', '4', '5']
-
-//--------------------------------------------------------------
 // assign
 // 배열의 요소를 하나하나 탐색하며 요소를 추가한다.
 // 즉, 배열의 요소를 추가할 때 사용한다.
@@ -1004,3 +988,12 @@ function identity() {
   return arguments[0];
 }
 console.log(identity(1, 2, 3, 4, 5)); // 1
+
+//--------------------------------------------------------------
+// values
+// 객체의 값만을 배열로 반환한다.
+// obj : 값들을 반환할 객체
+function values(obj) {
+  return Object.keys(obj).map((key) => obj[key]);
+}
+console.log(values({ a: 1, b: 2, c: 3 })); // [1, 2, 3]

@@ -997,3 +997,12 @@ function values(obj) {
   return Object.keys(obj).map((key) => obj[key]);
 }
 console.log(values({ a: 1, b: 2, c: 3 })); // [1, 2, 3]
+
+//--------------------------------------------------------------
+// keys
+// 객체의 키 값만을 배열로 반환한다.
+// obj : 키들을 반환할 객체
+function keys(obj) {
+  return Object.keys(obj);
+}
+console.log(keys({ a: 1, b: 2, c: 3 })); // ['a', 'b', 'c']

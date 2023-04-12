@@ -1006,3 +1006,15 @@ function keys(obj) {
   return Object.keys(obj);
 }
 console.log(keys({ a: 1, b: 2, c: 3 })); // ['a', 'b', 'c']
+
+//--------------------------------------------------------------
+// mapObject
+// 객체의 각 키에 함수를 실행한 결과를 객체로 반환한다.
+// obj : 함수를 실행할 객체
+// func : 실행할 함수
+function mapObject(obj, func) {
+  return Object.keys(obj).reduce((result, key) => {
+    result[key] = func(obj[key]);
+    return result;
+  }, {});
+}

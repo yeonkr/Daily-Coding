@@ -1018,3 +1018,15 @@ function mapObject(obj, func) {
     return result;
   }, {});
 }
+
+//--------------------------------------------------------------
+// invert
+// 객체의 키와 값을 뒤집는다.
+// obj : 키와 값을 뒤집을 객체
+function invert(obj) {
+  return Object.keys(obj).reduce((result, key) => {
+    result[obj[key]] = key;
+    return result;
+  }, {});
+}
+console.log(invert({ a: 1, b: 2, c: 3 })); // { 1: 'a', 2: 'b', 3: 'c' }

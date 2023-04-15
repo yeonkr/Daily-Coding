@@ -1030,3 +1030,16 @@ function invert(obj) {
   }, {});
 }
 console.log(invert({ a: 1, b: 2, c: 3 })); // { 1: 'a', 2: 'b', 3: 'c' }
+
+//--------------------------------------------------------------
+// pick
+// 객체에서 특정 키의 값을 추출한다.
+// obj : 키의 값을 추출할 객체
+// ...keys : 추출할 키들
+function pick(obj, ...keys) {
+  return keys.reduce((result, key) => {
+    result[key] = obj[key];
+    return result;
+  }, {});
+}
+console.log(pick({ a: 1, b: 2, c: 3 }, "a", "c")); // { a: 1, c: 3 }

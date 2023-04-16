@@ -1043,3 +1043,18 @@ function pick(obj, ...keys) {
   }, {});
 }
 console.log(pick({ a: 1, b: 2, c: 3 }, "a", "c")); // { a: 1, c: 3 }
+
+//--------------------------------------------------------------
+// omit
+// 객체에서 특정 키의 값을 제외한다.
+// obj : 키의 값을 제외할 객체
+// ...keys : 제외할 키들
+function omit(obj, ...keys) {
+  return Object.keys(obj).reduce((result, key) => {
+    if (!keys.includes(key)) {
+      result[key] = obj[key];
+    }
+    return result;
+  }, {});
+}
+console.log(omit({ a: 1, b: 2, c: 3 }, "a", "c")); // { b: 2 }

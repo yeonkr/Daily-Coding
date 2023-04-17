@@ -1058,3 +1058,12 @@ function omit(obj, ...keys) {
   }, {});
 }
 console.log(omit({ a: 1, b: 2, c: 3 }, "a", "c")); // { b: 2 }
+
+//--------------------------------------------------------------
+// toPairs
+// 객체를 키-값 쌍의 배열로 변환한다.
+// obj : 변환할 객체
+function toPairs(obj) {
+  return Object.keys(obj).map((key) => [key, obj[key]]);
+}
+console.log(toPairs({ a: 1, b: 2, c: 3 })); // [['a', 1], ['b', 2], ['c', 3]]

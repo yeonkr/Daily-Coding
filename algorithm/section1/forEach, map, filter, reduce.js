@@ -1067,3 +1067,21 @@ function toPairs(obj) {
   return Object.keys(obj).map((key) => [key, obj[key]]);
 }
 console.log(toPairs({ a: 1, b: 2, c: 3 })); // [['a', 1], ['b', 2], ['c', 3]]
+
+//--------------------------------------------------------------
+// fromPairs
+// 키-값 쌍의 배열을 객체로 변환한다.
+// pairs : 변환할 키-값 쌍의 배열
+function fromPairs(pairs) {
+  return pairs.reduce((result, pair) => {
+    result[pair[0]] = pair[1];
+    return result;
+  }, {});
+}
+console.log(
+  fromPairs([
+    ["a", 1],
+    ["b", 2],
+    ["c", 3],
+  ])
+); // { a: 1, b: 2, c: 3 }

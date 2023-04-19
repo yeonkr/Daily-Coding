@@ -1085,3 +1085,17 @@ console.log(
     ["c", 3],
   ])
 ); // { a: 1, b: 2, c: 3 }
+
+//--------------------------------------------------------------
+// defaults
+// 객체에 키가 없을 경우 기본값을 설정한다.
+// obj : 기본값을 설정할 객체
+// ...defaults : 기본값들
+function defaults(obj, ...defaults) {
+  return defaults.reduce((result, def) => {
+    if (!obj[def[0]]) {
+      obj[def[0]] = def[1];
+    }
+    return result;
+  }, obj);
+}

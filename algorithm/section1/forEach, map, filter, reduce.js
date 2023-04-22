@@ -1099,3 +1099,13 @@ function defaults(obj, ...defaults) {
     return result;
   }, obj);
 }
+
+//--------------------------------------------------------------
+// findKey
+// 객체에서 조건을 만족하는 키를 반환한다.
+// obj : 조건을 만족하는 키를 찾을 객체
+// predicate : 조건을 만족하는지 확인할 함수
+function findKey(obj, predicate) {
+  return Object.keys(obj).find((key) => predicate(obj[key]));
+}
+console.log(findKey({ a: 1, b: 2, c: 3 }, (value) => value === 2)); // 'b'

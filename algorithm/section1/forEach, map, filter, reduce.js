@@ -1121,3 +1121,29 @@ function findLastKey(obj, predicate) {
     .find((key) => predicate(obj[key]));
 }
 console.log(findLastKey({ a: 1, b: 2, c: 3 }, (value) => value % 2 === 1)); // 'c'
+
+//--------------------------------------------------------------
+// defaultsDeep
+// 객체에 키가 없을 경우 중첩된 객체의 키를 찾아 기본값을 설정한다.
+// obj : 기본값을 설정할 객체
+// ...defaults : 기본값들
+function defaultsDeep(obj, ...defaults) {
+  return defaults.reduce((result, def) => {
+    for (let key in def) {
+      if (!obj[key]) {
+        obj[key] = def[key];
+      } else {
+        defaultsDeep(obj[key], def[key]);
+      }
+    }
+    return result;
+  }, obj);
+}
+console.log(
+  defaultsDeep(
+    { a: { b: 2 } },
+    { a: { b: 1, c: 3 } },
+    { a: { d: 4 } },
+    { a: { e: 5 } }
+  )
+); // { a: { b: 2, c: 3, d: 4, e: 5 } }

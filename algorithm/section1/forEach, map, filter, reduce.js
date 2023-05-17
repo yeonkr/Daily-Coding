@@ -1147,3 +1147,21 @@ console.log(
     { a: { e: 5 } }
   )
 ); // { a: { b: 2, c: 3, d: 4, e: 5 } }
+
+//--------------------------------------------------------------
+// invertBy
+// 객체의 키와 값을 뒤집는다.
+// obj : 키와 값을 뒤집을 객체
+// iteratee : 키를 변환할 함수
+function invertBy(obj, iteratee) {
+  return Object.keys(obj).reduce((result, key) => {
+    let newKey = iteratee(obj[key]);
+    if (!result[newKey]) {
+      result[newKey] = key;
+    } else {
+      result[newKey] = [...result[newKey], key];
+    }
+    return result;
+  }, {});
+}
+console.log(invertBy({ a: 1, b: 2, c: 3 }, (value) => "group" + value)); // { group1: 'a', group2: 'b', group3: 'c' }

@@ -26,23 +26,30 @@ ss
 */
 
 function solution(arr) {
-  let answer = 0;
-  let n = arr.length;
-  let s = (e = Math.floor(n / 2)); // s = e = 2
+  let answer = 0; // 사과의 총 개수
+  const n = arr.length; // 격자판의 크기
+  const middle = Math.floor(n / 2); // 중간 인덱스
+  let start = middle; // 시작 인덱스
+  let end = middle; // 끝 인덱스
   for (let i = 0; i < n; i++) {
-    for (let j = s; j <= e; j++) {
-      answer += arr[i][j];
+    // 행
+    for (let j = start; j <= end; j++) {
+      // 열
+      answer += arr[i][j]; // 사과의 총 개수
     }
-    if (i < Math.floor(n / 2)) {
-      s--;
-      e++;
+    if (i < middle) {
+      // 중간 인덱스 전까지는 start--, end++
+      start--;
+      end++;
     } else {
-      s++;
-      e--;
+      // 중간 인덱스 이후부터는 start++, end--
+      start++;
+      end--;
     }
   }
-  return answer;
+  return answer; // 사과의 총 개수 반환
 }
+
 let arr = [
   [10, 13, 10, 12, 15],
   [12, 39, 30, 23, 11],

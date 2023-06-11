@@ -1165,3 +1165,16 @@ function invertBy(obj, iteratee) {
   }, {});
 }
 console.log(invertBy({ a: 1, b: 2, c: 3 }, (value) => "group" + value)); // { group1: 'a', group2: 'b', group3: 'c' }
+
+//--------------------------------------------------------------
+// mapKeys
+// 객체의 키를 변환한다.
+// obj : 키를 변환할 객체
+// iteratee : 키를 변환할 함수
+function mapKeys(obj, iteratee) {
+  return Object.keys(obj).reduce((result, key) => {
+    result[iteratee(obj[key])] = obj[key];
+    return result;
+  }, {});
+}
+console.log(mapKeys({ a: 1, b: 2, c: 3 }, (value) => "group" + value)); // { group1: 1, group2: 2, group3: 3 }

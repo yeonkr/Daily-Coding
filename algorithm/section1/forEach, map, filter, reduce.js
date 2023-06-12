@@ -1178,3 +1178,12 @@ function mapKeys(obj, iteratee) {
   }, {});
 }
 console.log(mapKeys({ a: 1, b: 2, c: 3 }, (value) => "group" + value)); // { group1: 1, group2: 2, group3: 3 }
+
+//--------------------------------------------------------------
+// lowerCase
+// 문자열을 소문자로 변환한다.
+// str : 소문자로 변환할 문자열
+function lowerCase(str) {
+  return str.toLowerCase();
+}
+console.log(lowerCase("HEllO WOrld!")); // 'hello world!'

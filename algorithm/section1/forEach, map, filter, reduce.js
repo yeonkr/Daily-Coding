@@ -1187,3 +1187,12 @@ function lowerCase(str) {
   return str.toLowerCase();
 }
 console.log(lowerCase("HEllO WOrld!")); // 'hello world!'
+
+//--------------------------------------------------------------
+// upperCase
+// 문자열을 대문자로 변환한다.
+// str : 대문자로 변환할 문자열
+function upperCase(str) {
+  return str.toUpperCase();
+}
+console.log(upperCase("HEllO WOrld!")); // 'HELLO WORLD!'
